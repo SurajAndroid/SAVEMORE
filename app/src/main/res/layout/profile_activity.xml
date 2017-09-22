@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/pin_content_layout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeeeee"
+    >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/sms_top_bg"
+        android:layout_height="200sp">
+
+     </RelativeLayout>
+
+    <ScrollView
+        android:scrollbars="none"
+        android:layout_marginRight="20sp"
+        android:layout_marginLeft="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="400sp"
+            android:orientation="vertical">
+
+            <TextView
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_marginTop="10sp"
+                android:text="USER NAME"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/userNameTxt" />
+
+            <LinearLayout
+
+                android:layout_marginTop="20sp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:gravity="center_vertical|end"
+                    android:layout_weight="0.5"
+                    android:text="ADDRESS: "
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView" />
+
+                <EditText
+                    android:hint="Address"
+                    android:enabled="false"
+                    android:background="@null"
+                    android:text="Royal ratan building UG-7 Mahatma Gandhi RD"
+                    android:paddingLeft="10sp"
+                    android:lines="2"
+                    android:layout_weight="1"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/AddresseditText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="5sp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:gravity="center_vertical|end"
+                    android:text="CITY: "
+                    android:layout_weight="0.5"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView2" />
+
+                <EditText
+                    android:enabled="false"
+                    android:background="@null"
+                    android:paddingLeft="10sp"
+                    android:text="Indore"
+                    android:lines="1"
+                    android:hint="City"
+                    android:layout_weight="1"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/cityEditTxt" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_marginTop="5sp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:gravity="center_vertical|end"
+                    android:layout_weight="0.5"
+                    android:text="TAHA: "
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView3" />
+
+                <EditText
+                    android:id="@+id/ThanaEditTxt"
+                    android:enabled="false"
+                    android:background="@null"
+                    android:paddingLeft="10sp"
+                    android:text="Indore"
+                    android:hint="Thana"
+                    android:lines="1"
+                    android:layout_weight="1"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_marginTop="5sp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:gravity="center_vertical|end"
+                    android:layout_weight="0.5"
+                    android:text="DIST: "
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent" />
+
+                <EditText
+                    android:id="@+id/DistEditTxt"
+                    android:enabled="false"
+                    android:background="@null"
+                    android:paddingLeft="10sp"
+                    android:lines="1"
+                    android:text="Indore"
+                    android:hint="District"
+                    android:layout_weight="1"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_marginTop="5sp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:gravity="center_vertical|end"
+                    android:layout_weight="0.5"
+                    android:text="PIN CODE: "
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent" />
+
+                <EditText
+                    android:id="@+id/PinEditTxt"
+                    android:enabled="false"
+                    android:background="@null"
+                    android:paddingLeft="10sp"
+                    android:text="452001"
+                    android:lines="1"
+                    android:hint="Pincode"
+                    android:layout_weight="1"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="5sp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:gravity="center_vertical|end"
+                    android:layout_weight="0.5"
+                    android:text="MOBILE NO1: "
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent" />
+
+                <EditText
+                    android:id="@+id/MobilOneTxt"
+                    android:enabled="false"
+                    android:background="@null"
+                    android:paddingLeft="10sp"
+                    android:text="+91-000-000-00000"
+                    android:hint="Mobile No 1"
+                    android:lines="1"
+                    android:layout_weight="1"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_marginTop="5sp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:gravity="center_vertical|end"
+                    android:layout_weight="0.5"
+                    android:text="MOBILE NO2: "
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent" />
+
+                <EditText
+                    android:maxLength="10"
+                    android:inputType="phone"
+                    android:enabled="false"
+                    android:background="@null"
+                    android:paddingLeft="10sp"
+                    android:text="+91-000-000-0000"
+                    android:lines="1"
+                    android:hint="Mobile No 2"
+                    android:layout_weight="1"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/MobileTwoeditText" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/EditLayout"
+                android:background="@drawable/fillbaoundry"
+                android:layout_marginBottom="30sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30sp"
+                android:orientation="horizontal"
+                android:layout_width="120sp"
+                android:layout_height="35sp">
+
+                <TextView
+                    android:id="@+id/editTxt"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_weight="0.5"
+                    android:text="EDIT"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

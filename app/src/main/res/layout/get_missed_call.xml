@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@color/button"
+        android:orientation="vertical"
+        android:id="@+id/relativeLayout2">
+
+
+        <ImageView
+            android:id="@+id/drawer_nav"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:contentDescription="@null"
+            android:padding="10dp"
+            android:src="@drawable/back_ic"
+            />
+
+
+
+        <TextView
+            android:id="@+id/main_menu_header"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="MISSED CALL"
+            android:maxLines="2"
+            android:textColor="#ffffff"
+            android:textSize="17dp"/>
+
+        <ImageView
+            android:id="@+id/refresh"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginRight="40dp"
+            android:contentDescription="@null"
+            android:padding="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:visibility="visible" />
+
+
+        <ImageView
+            android:id="@+id/actionbar"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="5dp"
+            android:contentDescription="@null"
+            android:padding="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+    <ListView
+
+        android:id="@+id/missedList"
+        android:scrollbars="none"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/relativeLayout2"></ListView>
+
+
+</RelativeLayout>

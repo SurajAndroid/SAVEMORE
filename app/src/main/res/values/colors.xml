@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#000000</color>
+    <color name="black">#000</color>
+    <color name="button">#feb211</color>
+    <color name="red">#dd1111</color>
+
+    <color name="yellow">#F2DBBD</color>
+    <color name="yellownew">#e6d120</color>
+    <color name="drawerline">#B3FFFFFF</color>
+    <color name="white">#FFF</color>
+
+</resources>

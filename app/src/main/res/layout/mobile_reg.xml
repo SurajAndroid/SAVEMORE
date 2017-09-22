@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/pin_content_layout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeeeee"
+   >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/sms_top_bg"
+        android:layout_height="190sp"/>
+
+
+    <TextView android:layout_width="wrap_content"
+        android:layout_marginLeft="70sp"
+        android:layout_marginRight="70sp"
+        android:layout_height="wrap_content"
+        android:text="PLEASE ENTER YOUR PHONE NUMBER"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:textSize="20dp"
+        android:textColor="@color/background_floating_material_dark"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+       />
+
+
+    <LinearLayout android:id="@+id/pin_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:paddingRight="50sp"
+        android:paddingLeft="50sp"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal">
+
+        <EditText
+            android:textColorHint="@color/black"
+            android:hint="+91"
+            android:focusable="false"
+            android:inputType="number"
+            android:layout_weight="1"
+            android:layout_width="0sp"
+            android:layout_height="match_parent" />
+
+        <View
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="5sp"
+            android:background="@color/black"
+            android:layout_width="1sp"
+            android:layout_height="match_parent"
+            />
+
+        <EditText
+            android:id="@+id/mobileNoEdit"
+            android:maxLength="10"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:paddingLeft="15sp"
+            android:hint="000-000-0000"
+            android:textColorHint="@color/black"
+            android:layout_weight="4"
+            android:layout_width="0sp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_marginLeft="30sp"
+        android:layout_marginRight="30sp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:weightSum="2">
+
+
+        <Button
+            android:id="@+id/veify"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="NEXT"
+            android:textAllCaps="false"
+            android:background="@drawable/fillbaoundry"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+
+</LinearLayout>
