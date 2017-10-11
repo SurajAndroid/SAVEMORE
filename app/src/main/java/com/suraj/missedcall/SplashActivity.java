@@ -45,15 +45,6 @@ public class SplashActivity extends Activity
 
         }
 
-        try
-        {
-
-            // Toast.makeText(getApplicationContext(),"Token="+token, Toast.LENGTH_LONG).show();
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
         smCurrentActivity=this;
         tv_version=(TextView)findViewById(R.id.tv_version);
         try {

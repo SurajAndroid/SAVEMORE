@@ -18,6 +18,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,7 @@ import utils.WebserviceHelper;
 
 public class CampaignActivity extends Activity implements RequestReceiver{
 
+    ScrollView myscrollview;
     RequestReceiver receiver;
     TextView cellNumberTxt;
     ImageView drawer_nav;
@@ -59,6 +61,7 @@ public class CampaignActivity extends Activity implements RequestReceiver{
 
     public void init(){
 
+        myscrollview = (ScrollView)findViewById(R.id.myscrollview);
         sharedPreferences = this.getSharedPreferences("verify", Context.MODE_PRIVATE);
         Constant.PHONE_NO = sharedPreferences.getString("phone","");
         drawer_layout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -81,6 +84,8 @@ public class CampaignActivity extends Activity implements RequestReceiver{
         messageEdit = (EditText)findViewById(R.id.messageEdit);
         selectAllCheck = (CheckBox)findViewById(R.id.selectAllCheck);
         cellNumberTxt.setText("+91 - "+sharedPreferences.getString("phone",""));
+        myscrollview.fullScroll(View.FOCUS_UP);
+
         CampaignService();
     }
 
@@ -115,54 +120,59 @@ public class CampaignActivity extends Activity implements RequestReceiver{
 
     public void setValidation(){
 
-        if(fromEdit.getText().toString().length()!=0){
-            if(toEditTxt.getText().toString().length()!=0){
-                if(Integer.parseInt(fromEdit.getText().toString())<Integer.parseInt(toEditTxt.getText().toString())){
-                      if((Integer.parseInt(toEditTxt.getText().toString())-Integer.parseInt(fromEdit.getText().toString()))< Integer.parseInt(Global.setting.get(0).getRemainingSmsCount())){
-                           if(Integer.parseInt(toEditTxt.getText().toString())>Integer.parseInt(Global.setting.get(0).getTotalDistinctNumbersCount())){
-                               Toast.makeText(getApplicationContext(),"Please enter right format",Toast.LENGTH_SHORT).show();
-                          }else{
+        try {
+            if(fromEdit.getText().toString().length()!=0){
+                if(toEditTxt.getText().toString().length()!=0){
+                    if(Integer.parseInt(fromEdit.getText().toString())<=Integer.parseInt(toEditTxt.getText().toString())){
+                        if((Integer.parseInt(toEditTxt.getText().toString())-Integer.parseInt(fromEdit.getText().toString())) <= Integer.parseInt(Global.setting.get(0).getRemainingSmsCount())){
+                            if(Integer.parseInt(toEditTxt.getText().toString())>Integer.parseInt(Global.setting.get(0).getTotalDistinctNumbersCount())){
+                                Toast.makeText(getApplicationContext(),"Please enter right format",Toast.LENGTH_SHORT).show();
+                            }else{
 
-                               if(messageEdit.getText().length()!=0){
-                                   if(selectAllCheck.isChecked()){
-                                       Constant.START_VALUE = "0";
-                                       Constant.END_VALUE = "0";
-                                   }else {
-                                       Constant.START_VALUE = fromEdit.getText().toString();
-                                       Constant.END_VALUE = toEditTxt.getText().toString();
-                                   }
-                                   Constant.MESSAGE_TXT = messageEdit.getText().toString();
-                                   sendSmsService();
+                                if(messageEdit.getText().length()!=0){
+                                    if(selectAllCheck.isChecked()){
+                                        Constant.START_VALUE = "0";
+                                        Constant.END_VALUE = "0";
+                                    }else {
+                                        Constant.START_VALUE = fromEdit.getText().toString();
+                                        Constant.END_VALUE = toEditTxt.getText().toString();
+                                    }
+                                    Constant.MESSAGE_TXT = messageEdit.getText().toString();
+                                    sendSmsService();
 
-                               }else {
-                                   Toast.makeText(getApplicationContext(),"Please enter sms",Toast.LENGTH_SHORT).show();
-                               }
-                          }
-                      }else {
-                          Toast.makeText(getApplicationContext(),"No enough sms remaining please recharge your account",Toast.LENGTH_SHORT).show();
-                      }
+                                }else {
+                                    Toast.makeText(getApplicationContext(),"Please enter sms",Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        }else {
+                            Toast.makeText(getApplicationContext(),"No enough sms remaining please recharge your account",Toast.LENGTH_SHORT).show();
+                        }
+                    }else {
+                        Toast.makeText(getApplicationContext(),"Please enter right format",Toast.LENGTH_SHORT).show();
+                    }
                 }else {
-                    Toast.makeText(getApplicationContext(),"Please enter right format",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Please enter sms from to till",Toast.LENGTH_SHORT).show();
                 }
             }else {
-                Toast.makeText(getApplicationContext(),"Please enter sms from to till",Toast.LENGTH_SHORT).show();
-            }
-        }else {
-            if(selectAllCheck.isChecked()){
-                Constant.START_VALUE = "0";
-                Constant.END_VALUE = "0";
-                Constant.MESSAGE_TXT = messageEdit.getText().toString();
-                if(messageEdit.getText().toString().length()!=0){
+                if(selectAllCheck.isChecked()){
+                    Constant.START_VALUE = "0";
+                    Constant.END_VALUE = "0";
                     Constant.MESSAGE_TXT = messageEdit.getText().toString();
-                    sendSmsService();
-                }else {
-                    Toast.makeText(getApplicationContext(),"Please enter sms",Toast.LENGTH_SHORT).show();
-                }
+                    if(messageEdit.getText().toString().length()!=0){
+                        Constant.MESSAGE_TXT = messageEdit.getText().toString();
+                        sendSmsService();
+                    }else {
+                        Toast.makeText(getApplicationContext(),"Please enter sms",Toast.LENGTH_SHORT).show();
+                    }
 
-            }else {
-                Toast.makeText(getApplicationContext(),"Please enter sms from to till",Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(getApplicationContext(),"Please enter sms from to till",Toast.LENGTH_SHORT).show();
+                }
             }
+        }catch (Exception e){
+            e.printStackTrace();
         }
+
     }
 
     public void clickListener(){
