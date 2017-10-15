@@ -93,11 +93,10 @@ public class AccountActivity extends Activity implements RequestReceiver{
     }
 
     public void clickListener(){
-
         rechargeTxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = "http://merafayda.com/";
+                String url = "http://rec.rajhans.digital/";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 startActivity(i);
@@ -107,7 +106,7 @@ public class AccountActivity extends Activity implements RequestReceiver{
         renewTxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = "http://merafayda.com/";
+                String url = "http://ren.rajhans.digital/";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 startActivity(i);
